@@ -38,10 +38,28 @@
   background-color: #fff;
   border: 2px solid black;
   margin-top: 2vh;
+  overflow: scroll;
 }
 
-.entry {
+.sad,
+.happy,
+.inLove,
+.anxious {
   font-size: 1.2em;
   border-bottom: 1px solid black;
   padding: 10px;
+}
+
+.sad {
+  background-color: #dbdbdb;
+}
+.happy {
+  background-color: #a2fbbb;
+}
+
+.inLove {
+  background-color: #ffa3eb;
+}
+.anxious {
+  background-color: #f7f9ab;
 }

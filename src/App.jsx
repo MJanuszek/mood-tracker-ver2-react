@@ -2,9 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const [moodsJournal, setMoodsJournal] = useState([
-    { mood: "inLove", date: "date" },
-  ]);
+  const [moodsJournal, setMoodsJournal] = useState([]);
 
   function handleSaveCurrentMood(event) {
     let mood = event.target.id;
@@ -17,7 +15,7 @@ function App() {
       minute: "2-digit",
     });
 
-    console.log(mood, moodsJournal);
+    // console.log(mood, moodsJournal);
     setMoodsJournal([...moodsJournal, { mood, date }]);
   }
   return (
@@ -56,7 +54,7 @@ function App() {
       <h2 className="title">Your previous moods:</h2>
       <div className="mood-entries">
         {moodsJournal.map((entry, index) => (
-          <div className="entry" key={index}>
+          <div className={entry.mood} key={index}>
             You were {entry.mood} on {entry.date}
           </div>
         ))}
