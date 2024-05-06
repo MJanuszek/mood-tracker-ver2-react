@@ -3,10 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-color: #1177c5;
+}
 .container {
   font-size: 1.6em;
   height: 100vh;
+  max-width: 80vw;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -62,4 +66,14 @@
 }
 .anxious {
   background-color: #f7f9ab;
+}
+
+.delete {
+  padding: 10px;
+  margin-left: 1.5vw;
+  font-size: 0.5em;
+  background-color: #fdf1f1;
+}
+.delete:hover {
+  background-color: #ff5151;
 }

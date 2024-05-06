@@ -15,9 +15,20 @@ function App() {
       minute: "2-digit",
     });
 
-    // console.log(mood, moodsJournal);
-    setMoodsJournal([...moodsJournal, { mood, date }]);
+    let id = Math.floor(1000000 + Math.random() * 9000000);
+
+    console.log(mood, moodsJournal);
+    setMoodsJournal([...moodsJournal, { mood, date, id }]);
   }
+
+  function handleDeleteEntry(id) {
+    let idToDelete = id;
+    console.log("delete", idToDelete);
+    const updatedMoodsJournal = moodsJournal.filter((entry) => entry.id !== id);
+    setMoodsJournal(updatedMoodsJournal);
+  }
+
+  // --------------
   return (
     <div className="container">
       <h2 className="title">Click on face to record how are you feeling</h2>
@@ -56,6 +67,12 @@ function App() {
         {moodsJournal.map((entry, index) => (
           <div className={entry.mood} key={index}>
             You were {entry.mood} on {entry.date}
+            <button
+              className="delete"
+              onClick={() => handleDeleteEntry(entry.id)}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </div>
